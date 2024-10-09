@@ -23,10 +23,9 @@ const initialState: JobState = {
 export const fetchJobs = createAsyncThunk(
   "jobs/fetchJobs",
   async (_, { getState }) => {
-    const state = getState() as { jobs: JobState }; // الحصول على الحالة الحالية
-    const query = state.jobs.Query; // استخراج الـ Query من الحالة
+    const state = getState() as { jobs: JobState };
+    const query = state.jobs.Query;
 
-    // تحقق إذا كانت الـ Query فارغة
     if (query === "") {
       const response = await axios.get(
         "https://skills-api-zeta.vercel.app/jobs"

@@ -21,9 +21,9 @@ ul:has(.related-card) {
   text-decoration: none !important;
   color: black !important;
 }
-.RelatedJobs{
-    background-color: #d9d9d9;
-    margin-top: 30px;
-    padding: 20px 50px;
-    height:fit-content;
+.RelatedJobs {
+  background-color: #d9d9d9;
+  margin-top: 30px;
+  padding: 20px 50px;
+  height: fit-content;
 }

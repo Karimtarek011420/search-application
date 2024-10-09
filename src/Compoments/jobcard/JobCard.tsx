@@ -1,4 +1,4 @@
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./jobcard.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -19,10 +19,8 @@ interface Job {
   };
 }
 
-
 const JobCard: React.FC<{ job: Job }> = ({ job }) => {
   const [skills, setSkills] = useState<string[]>([]);
-
 
   useEffect(() => {
     const fetchSkills = async () => {
@@ -31,14 +29,15 @@ const JobCard: React.FC<{ job: Job }> = ({ job }) => {
           axios.get(`https://skills-api-zeta.vercel.app/skill/${skill.id}`)
         );
         const skillResponses = await Promise.all(skillPromises);
-        const skillNames = skillResponses.map(response => response.data.data.skill.attributes.name);
+        const skillNames = skillResponses.map(
+          (response) => response.data.data.skill.attributes.name
+        );
         setSkills(skillNames);
       }
-
     };
 
     fetchSkills();
-  }, [job])
+  }, [job]);
   return (
     <div className="job-card">
       <h3>{job.title || job.attributes?.title}</h3>
@@ -52,7 +51,6 @@ const JobCard: React.FC<{ job: Job }> = ({ job }) => {
       </ul>
 
       <Link to={`/job/${job.id}`}>View Job details</Link>
-
     </div>
   );
 };

@@ -17,7 +17,7 @@
   list-style: none;
   display: grid;
 
-  grid-template-columns:  repeat(3  , auto) ;
+  grid-template-columns: repeat(3, auto);
   gap: 10px;
   margin: 0;
   padding: 0;
@@ -26,7 +26,7 @@
 }
 .job-card ul li {
   padding: 5px;
-  background-color:#C4C4C4;
+  background-color: #c4c4c4;
   border-radius: 10px;
   color: #000000;
 }

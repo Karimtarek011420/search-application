@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface SearchState {
-  searchHistory: string[];  // قائمة لتخزين تاريخ البحث
+  searchHistory: string[];  
 }
 
 const initialState: SearchState = {
-  searchHistory: [],  // قائمة فارغة في البداية
+  searchHistory: [],  
 };
 
 const searchSlice = createSlice({
@@ -13,11 +13,10 @@ const searchSlice = createSlice({
   initialState,
   reducers: {
     setSearchHistory: (state, action: PayloadAction<string>) => {
-      // إضافة القيمة الجديدة إلى القائمة الموجودة
       state.searchHistory = [...state.searchHistory, action.payload];
     },
     clearSearchHistory: (state) => {
-      state.searchHistory = [];  // تفريغ القائمة
+      state.searchHistory = []; 
     },
   },
 });

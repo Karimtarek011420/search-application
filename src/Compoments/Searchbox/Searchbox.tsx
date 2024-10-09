@@ -1,12 +1,17 @@
 import React, { useState, useCallback, useEffect } from "react";
-import { debounce } from 'lodash'; // Use lodash debounce
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import './searchbox.css';
+import { debounce } from "lodash";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import "./searchbox.css";
 import { useDispatch } from "react-redux";
-import { GetQuery, fetchJobsQuery, fetchJobs, ClearQuery } from "../../RTK/JobsSlice";
+import {
+  GetQuery,
+  fetchJobsQuery,
+  fetchJobs,
+  ClearQuery,
+} from "../../RTK/JobsSlice";
 import { AppDispatch } from "../../RTK/store";
-import { setSearchHistory } from '../../RTK/searchSlice';
+import { setSearchHistory } from "../../RTK/searchSlice";
 
 export default function Searchbox() {
   const dispatch = useDispatch<AppDispatch>();
@@ -30,7 +35,6 @@ export default function Searchbox() {
   const saveSearchQuery = useCallback(
     debounce((searchTerm: string) => {
       if (searchTerm.trim() !== "") {
-        // حفظ القيمة فقط إذا كانت غير فارغة
         dispatch(setSearchHistory(searchTerm));
       }
     }, 500),
@@ -64,11 +68,11 @@ export default function Searchbox() {
         <FontAwesomeIcon
           icon={faSearch}
           style={{
-            position: 'absolute',
-            top: '50%',
-            right: '10px',
-            transform: 'translateY(-50%)',
-            color: '#ccc',
+            position: "absolute",
+            top: "50%",
+            right: "10px",
+            transform: "translateY(-50%)",
+            color: "#ccc",
           }}
         />
       </div>

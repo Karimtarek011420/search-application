@@ -69,7 +69,7 @@ export default function SingleJob() {
         setJob(response.data.data.job);
         setLoading(false);
       } catch (error: any) {
-        setError("فشل في جلب البيانات");
+        setError("'Failed");
         setLoading(false);
       }
     };
