@@ -1,18 +1,41 @@
 .searchheader {
   background-color: #ffffff;
   margin-top: 3px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
 }
 .searchheadchild {
   position: relative;
   width: 400px;
   padding: 20px;
 }
-.searchheadchild input {
-  padding: 100px;
-}
 input::placeholder {
   font-size: 1.1rem;
 }
+/* CSS */
+@media (max-width: 500px) {
+    .searchheader .searchheadchild {
+        margin-left:2px;
+        width: 80%;
+    }
+    .searchheader .searchheadchild input {
+      width:60%; 
+      padding: 8px; 
+      font-size: 14px; 
+      margin: 0;
+      padding: 0;
+    }
+  
+    .searchheader .searchheadchild {
+      position: relative;
+    }
+  
+    .searchheader .searchheadchild input {
+      padding-right: 40px; 
+    }
+  
+    .searchheader .searchheadchild .faSearch {
+      right: 15px;   
+      font-size: 18px; 
+    }
+  }
+  
