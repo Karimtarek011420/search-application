@@ -18,6 +18,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: "/", element: <AllJobsScreen /> },
+      { path: "search-application", element: <AllJobsScreen /> },
       { path: "jobs", element: <AllJobsScreen /> },
       { path: "search", element: <SearchComponent /> },
       { path: "history", element: <History/> },
