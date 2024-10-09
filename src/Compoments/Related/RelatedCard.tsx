@@ -37,7 +37,7 @@ const RelatedCard = React.memo((props: Job) => {
                     const jobDetails = JobsResponses.map(response => response.data.data.job.attributes);
                     setJobsData(jobDetails);
                 } catch (error) {
-                    console.error('فشل في جلب تفاصيل الوظائف:', error);
+                    console.error('Failed to fetch job details:', error);
                 }
             }
         };
@@ -61,7 +61,7 @@ const RelatedCard = React.memo((props: Job) => {
                     })));
                     SetSkills({ SkillsData, SkillsInfo });
                 } catch (error) {
-                    console.error('فشل في جلب تفاصيل المهارات:', error);
+                    console.error('Failed:', error);
                 }
             }
         };
